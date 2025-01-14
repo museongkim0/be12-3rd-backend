@@ -37,7 +37,7 @@ public class InstructorDao {
     }
 
     // 과제 삭제
-    public void deleteHomework(Object homework) {
+    public void deleteHomework(int idx) {
         String sql = "delete from Homework where idx=?";
 
     }
@@ -55,7 +55,7 @@ public class InstructorDao {
     }
 
     // 자료 삭제
-    public void deleteData(Object data) {
+    public void deleteData(int idx) {
         String sql = "delete from Course_Data where idx=?";
 
     }
