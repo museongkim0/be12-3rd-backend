@@ -4,16 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import static common.Constants.*;
+
 public class DbConnection {
-    private static final String URL = "jdbc:mariadb://:3306/";
-    private static final String USER = "";
-    private static final String PASS = "qwer1234";
 
     private static Connection conn;
 
     static {
         try {
-            conn = DriverManager.getConnection(URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
         }catch (Exception e) {
             e.printStackTrace();
         }
