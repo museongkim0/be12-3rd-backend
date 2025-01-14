@@ -1,7 +1,11 @@
 package student.controller;
 
-public class StudentController{
-    int a;
-    int b;
+import jakarta.servlet.http.HttpServlet;
+
+public class StudentController extends HttpServlet {
+
+    
+
+
 
 }
