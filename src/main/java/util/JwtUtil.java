@@ -1,10 +1,9 @@
-package utils;
+package util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import model.User;
 
 import java.util.Date;
 
