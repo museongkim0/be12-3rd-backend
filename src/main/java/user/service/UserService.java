@@ -11,13 +11,13 @@ public class UserService {
         this.userDao = new UserDao(DbConnection.getConnection());
     }
 
-    public void signup(User user) {
+    public String signup(User user) {
 
         String originPassword = user.getPassword();
 
         user.setPassword("암호화됨" + originPassword);
 
-        userDao.insertUser(user);
+        return userDao.insertUser(user);
     }
 
     public int login(User user) {
