@@ -42,30 +42,33 @@ public class InstructorController extends HttpServlet {
             Homework homework = utils.JsonParser.parse(req, Homework.class);
 
             instructorService.addHomework(homework);
-            resp.sendRedirect("/");
+            resp.sendRedirect("/instructor/dashboard");
         } else if ("/updateHomework".equals(action)) {
             Homework homework = utils.JsonParser.parse(req, Homework.class);
             instructorService.updateHomework(homework);
 
-            resp.sendRedirect("/");
+            resp.sendRedirect("/instructor/dashboard");
         } else if ("/deleteHomework".equals(action)) {
 
-
+            resp.sendRedirect("/instructor/dashboard");
         } else if ("/addHandout".equals(action)) {
             Handout handout = utils.JsonParser.parse(req, Handout.class);
             instructorService.addHandout(handout);
 
-            resp.sendRedirect("/");
+            resp.sendRedirect("/instructor/dashboard");
         } else if ("/updateHandout".equals(action)) {
             Handout handout = utils.JsonParser.parse(req, Handout.class);
             instructorService.updateHandout(handout);
 
-            resp.sendRedirect("/");
+            resp.sendRedirect("/instructor/dashboard");
         } else if ("/deleteHandout".equals(action)) {
 
+            resp.sendRedirect("/instructor/dashboard");
         } else if ("/addCurriculum".equals(action)) {
             Curriculum curriculum = utils.JsonParser.parse(req, Curriculum.class);
             instructorService.addCurriculum(curriculum);
+
+            resp.sendRedirect("/instructor/dashboard");
         }
     }
 }
