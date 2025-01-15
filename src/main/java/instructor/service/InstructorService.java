@@ -1,13 +1,13 @@
 package instructor.service;
 
-import common.DbConnection;
+import common.HikariCp;
 import instructor.model.dao.InstructorDao;
 
 public class InstructorService {
     private InstructorDao instructorDao;
 
     public InstructorService(){
-        this.instructorDao = new InstructorDao(DbConnection.getConnection());
+        this.instructorDao = new InstructorDao(HikariCp.getConnection());
     }
 
     public void addCurriculum(Object curriculum){
