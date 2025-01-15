@@ -5,6 +5,7 @@ import instructor.model.Curriculum;
 import instructor.model.Handout;
 import instructor.model.Homework;
 import instructor.model.dao.InstructorDao;
+import student.model.Student;
 
 public class InstructorService {
     private InstructorDao instructorDao;
