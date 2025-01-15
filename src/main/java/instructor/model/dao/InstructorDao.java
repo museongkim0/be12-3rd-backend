@@ -4,8 +4,10 @@ import instructor.model.Curriculum;
 import instructor.model.Handout;
 import instructor.model.Homework;
 import instructor.model.Instructor;
+import student.model.Student;
 
 import java.sql.Connection;
+import java.util.List;
 
 public class InstructorDao {
     private Connection conn;
