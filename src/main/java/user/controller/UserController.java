@@ -48,12 +48,17 @@ public class UserController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getPathInfo();
         if ("/signup".equals(action)) {
-            User user = new User(
-                    req.getParameter("email"),
-                    req.getParameter("password"),
-                    req.getParameter("name")
-            );
-            userService.signup(user);
+//            User user = new User(
+//                    req.getParameter("email"),
+//                    req.getParameter("password"),
+//                    req.getParameter("name")
+//            );
+            User user = JsonParser.parse(req, User.class);
+            String userEmail = userService.signup(user);
+            if (userEmail != null) {
+                LoginDto resDto = new LoginDto(true);
+                JsonParser.parse(resp, resDto);
+            }
             resp.sendRedirect("/user/login");
         } else if ("/login".equals(action)) {
 //            User user = new User(

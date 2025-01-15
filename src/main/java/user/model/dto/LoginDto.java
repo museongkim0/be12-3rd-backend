@@ -9,6 +9,10 @@ public class LoginDto {
         this.token = token;
     }
 
+    public LoginDto(boolean result) {
+        this.result = result;
+    }
+
     public boolean isResult() {
         return result;
     }

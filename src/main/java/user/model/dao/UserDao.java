@@ -14,12 +14,13 @@ public class UserDao {
         this.conn = conn;
     }
 
-    public void insertUser(User user) {
+    public String insertUser(User user) {
         String sql = "INSERT INTO user (email, password, name) " +
                 "VALUE ('" + user.getEmail() + "','" + user.getPassword() + "','" + user.getName() + "')";
 
         try {
             conn.createStatement().executeQuery(sql);
+            return user.getEmail();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
