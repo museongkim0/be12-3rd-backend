@@ -9,7 +9,7 @@ import manager.service.ManagerService;
 
 import java.io.IOException;
 
-@WebServlet("manager/*")
+@WebServlet("/manager/*")
 public class ManagerController extends HttpServlet {
     private ManagerService managerService;
 
