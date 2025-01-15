@@ -1,5 +1,8 @@
 package instructor.model.dao;
 
+import instructor.model.Curriculum;
+import instructor.model.Handout;
+import instructor.model.Homework;
 import instructor.model.Instructor;
 
 import java.sql.Connection;
@@ -12,7 +15,7 @@ public class InstructorDao {
     }
 
     // 커리큘럼 등록
-    public void insertCurriculum(Object curriculum) {
+    public void insertCurriculum(Curriculum curriculum) {
         String sql = "insert into Course_Curriculum values(?,?,?,?,?)";
 
     }
@@ -25,13 +28,13 @@ public class InstructorDao {
     }
 
     // 과제 생성
-    public void insertHomework(Object homework) {
+    public void insertHomework(Homework homework) {
         String sql = "insert into Homework values(?,?,?,?,?)";
 
     }
 
     // 과제 수정
-    public void updateHomework(Object homework) {
+    public void updateHomework(Homework homework) {
         String sql = "update Homework set homework=? where idx=?";
 
     }
@@ -43,19 +46,19 @@ public class InstructorDao {
     }
 
     // 자료 등록
-    public void insertData(Object data) {
+    public void insertHandout(Handout handout) {
         String sql = "insert into Course_Data values(?,?,?,?,?)";
 
     }
 
     // 자료 수정
-    public void updateData(Object data) {
+    public void updateHandout(Handout data) {
         String sql = "update Course_Data set data=? where idx=?";
 
     }
 
     // 자료 삭제
-    public void deleteData(int idx) {
+    public void deleteHandout(int idx) {
         String sql = "delete from Course_Data where idx=?";
 
     }

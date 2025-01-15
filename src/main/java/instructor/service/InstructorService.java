@@ -1,6 +1,9 @@
 package instructor.service;
 
 import common.HikariCp;
+import instructor.model.Curriculum;
+import instructor.model.Handout;
+import instructor.model.Homework;
 import instructor.model.dao.InstructorDao;
 
 public class InstructorService {
@@ -10,7 +13,7 @@ public class InstructorService {
         this.instructorDao = new InstructorDao(HikariCp.getConnection());
     }
 
-    public void addCurriculum(Object curriculum){
+    public void addCurriculum(Curriculum curriculum){
         instructorDao.insertCurriculum(curriculum);
     }
 
@@ -18,11 +21,11 @@ public class InstructorService {
         return instructorDao.selectStudentSpec(idx);
     }
 
-    public void addHomework(Object homework){
+    public void addHomework(Homework homework){
         instructorDao.insertHomework(homework);
     }
 
-    public void updateHomework(Object homework){
+    public void updateHomework(Homework homework){
         instructorDao.updateHomework(homework);
     }
 
@@ -30,16 +33,16 @@ public class InstructorService {
         instructorDao.deleteHomework(homeworkIdx);
     }
 
-    public void addData(Object data){
-        instructorDao.insertData(data);
+    public void addHandout(Handout data){
+        instructorDao.insertHandout(data);
     }
 
-    public void updateData(Object data){
-        instructorDao.updateData(data);
+    public void updateHandout(Handout data){
+        instructorDao.updateHandout(data);
     }
 
-    public void deleteData(int dataIdx){
-        instructorDao.deleteData(dataIdx);
+    public void deleteHandout(int dataIdx){
+        instructorDao.deleteHandout(dataIdx);
     }
 
     public List<Student> getStudentListByHomework(int idx){
